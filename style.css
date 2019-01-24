@@ -1,11 +1,16 @@
-h1{
-    color: red;
-    font-sze: 20px;
-    margn: 0'
+<head>
+  <meta charset="utf-8" />
+  <title>CSS Style</title>
 
-    h1#second-ttle {
-        color: blue;
-
+  <style>
+    p {
+      color: red;
+      font-size: 32px;
     }
-    
-}
+  </style>
+  
+</head>
+<body>
+  <p>paragraph 1</p>
+  <p>paragraph 2</p>
+</body>
