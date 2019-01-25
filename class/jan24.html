@@ -31,6 +31,7 @@ console.log(myNumber + 10)
     <br>
     String Variables:
     </p>
+
 <script> 
 var username = "Annalee" 
 
@@ -45,15 +46,97 @@ console.log(bigNumber);
 
     Double slashes: denote comment
 
-    In the next example, the array being created is called USERS.
+    In the next example, the array being created is called USERS.  It's important to remember that arrays can hold multiple kinds of data points.
 
 </p>
 
 <script>
-var users = ["Dave","Dan", "Mengyue"];
+var users = ["Dave", "Dan", "Mengyue"];
 console.log(users);
+console.log(users[1]);
 </script>
 
+<p>
+    Object Variables
+    Curled bracket.
+</p>
+
+<script>
+    var myObject = {
+        name: "Annalee",
+        color: "purple",
+        };
+console.log(myObject.name)
+
+    var complexUser = {
+        name: "Annalee",
+        zip: 33647,
+        color: "grey",
+        dog: true,
+        greet: function(greeting) {
+    
+            console.log(greeting + "Dave!")
+                                    }
+                        };
+
+complexUser.greet("Goodbye");
+
+console.log(complexUser.color);
+ </script>
+
+
+<script>
+var myNumber = 12;
+
+if (myNumber > 10) {
+    console.log(Wow! Big Number!");
+}
+else {
+    console.log("Not so big...");
+}
+
+
+var greaterThanTen = function(num) {
+
+    if (num > 10) {
+        console.log("Yes!");
+    }
+    else {
+        console.log("noooo");
+    }
+
+    return num > 10;
+}
+var checkNumber = greaterThanTen(20);
+
+console.log(checkNumber);
+    }
+    }
+}
+</script>
+
+ <p>
+     If a logic has to be repeated, make a function. It's like a CSS class.  You can avoid tedious clean up by letting one logic take care of the task.
+ </p>
+
+ <script>
+ 
+ var sayHello = function(name) {
+     console.log("Hello," + name);
+ }
+
+ sayHello("Dave");
+ sayHello("Lisa");
+ sayHello(complexUser.name)
+
+     </script>
+
+<script>
+    var sayText = (txt)
+
+    var plusTen = functoin(num) {
+        return num + 10;
+    }
 
         <a href ="/index.html">Home </a>
     </body>
