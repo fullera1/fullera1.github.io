@@ -14,7 +14,7 @@
             }
            
          </style>
-<h1>An excerpt from Dostoyevsky's Crime and Punishment</h1>
+<h1 id="header">An excerpt from Dostoyevsky's Crime and Punishment</h1>
 <p id="cpText"> “But how pale you are, to be sure... and your hands are trembling too? Have you been bathing, or what?”
 
         “Fever,” he answered abruptly. “You can’t help getting pale... if you’ve nothing to eat,” he added, with difficulty articulating the words.
@@ -45,10 +45,9 @@
     
 
 
-    <script>
-        function colorElementPurple(cpText) {
-         var el = document.getElementById(cpText);
-         el.style.background-color = "purple";
+    <script> //put function here between script tags.
+        function changeColor () {
+            document.getElementById(cpText).style.body.background-color = "blue";
 }
 
     </script>
