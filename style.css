@@ -3,11 +3,22 @@
   <title>CSS Style</title>
 
   <style>
-    p {
-      color: red;
-      font-size: 32px;
+
+  body {
+    background-color: lightblue;
+    color: navy;
     }
-    image {
+  
+       h1 {
+        color: navy;
+        margin-left: 20px;
+          }
+      p {
+        color: red;
+        font-size: 32px;
+        }
+      image {
+      border: blueviolet; 
       size="50%"
     }
   </style>
