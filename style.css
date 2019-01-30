@@ -7,6 +7,9 @@
       color: red;
       font-size: 32px;
     }
+    image {
+      size="50%"
+    }
   </style>
   
 </head>
