@@ -7,9 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
    <h1>Interacting with SVG Data via D3 Functions</h1>
+   <svg width=100% height=30%>
+    <rect x="2px" y="2px" width="400px" height="400px" fill="#F9E79F"></rect>
+    <rect x="2px" y="2px" width="400px" height="400px" fill="#F9E79F"></rect>
+    <rect x="2px" y="2px" width="400px" height="400px" fill="#F9E79F"></rect>
+    <rect x="2px" y="2px" width="400px" height="400px" fill="#F9E79F"></rect>
+    <rect x="2px" y="2px" width="400px" height="400px" fill="#F9E79F"></rect>
+  </svg>
+
+  <script> 
+  //for button 1
+  var square = svg.selectAll("rect")
+    .data([10, 20, 30, 40, 50, 60],} function(d) { return d; });
+  
+  square.enter().append("square")
+    .attr("width", 200px)
+    .attr("height", function(d, i) { return i * 200; })
+
+
+    //for button 2
+  
+  square.exit().remove();
+  </script>
+
+
+
+
     <p> <a href="/index.html">Home</a></p>
 
 </body>
