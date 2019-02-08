@@ -4,3 +4,7 @@ d3.text("data/textData.txt", function(error, data) {
     console.log("text:", data);
 });
 
+d3.csv("data/csvData.csv", function(error, data) { 
+    console.log("csv:", data);
+
+});
