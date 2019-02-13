@@ -6,10 +6,15 @@ d3.text("/Data/textData.txt", function(error, data) {
 
 d3.csv("/Data/csvData.csv", function(error, data) { 
     console.log("csv:", data);
+    data.forEach(function(d) {
+        d.export = parseFloat(d.export);
+        d.country = parseFloat(d.country);
+        
+    });
 
 });
 
-d3.json("file.json", function(error, data) {
+d3.json("/Data/jsData.json", function(error, data) {
     console.log(data);
   });
 
