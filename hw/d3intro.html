@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>June 2017</title>
+    <title>D3 SVG Interaction</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
@@ -11,39 +11,11 @@
 </head>
 <body>
    <h1>Interacting with SVG Data via D3 Functions</h1>
-   <svg width=100% height=30%>
-    <rect x="2px" y="2px" width="400px" height="400px" fill="#000000"></rect>
-    <rect x="2px" y="2px" width="400px" height="400px" fill="#000099"></rect>
-    <rect x="2px" y="2px" width="400px" height="400px" fill="#009900"></rect>
-    <rect x="2px" y="2px" width="400px" height="400px" fill="#990000"></rect>
-    <rect x="2px" y="2px" width="400px" height="400px" fill="#900009"></rect>
-  </svg>
+   <svg id="initBlocks" width=100% height=30%>
+     <script src="31jan.js"></script>
+      
+    </svg>
+      
 
-  <script> 
-  //for button 1
-  var square = svg.selectAll("rect")
-    .data([10, 20, 30, 40, 50, 60],} function(d) { return d; });
-
-    //something here to 
-  
-  square.enter().append("square")
-    .attr("width", 200px)
-    .attr("height", function(d, i) { return i * 200; })
-
-    document.write('<button id="button1" onclick="
-    //function
-    ;">Button</button>');
-
-    //for button 2
-    
-  
-  square.exit().remove();
-  </script>
-
-
-
-
-    <p> <a href="/index.html">Home</a></p>
-
-</body>
-</html>
+  </body>
+  </html>
