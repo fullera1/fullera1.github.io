@@ -13,9 +13,36 @@
    <h1>Interacting with SVG Data via D3 Functions</h1>
    <svg id="initBlocks" width=100% height=30%>
      <script src="31jan.js"></script>
-      
-    </svg>
-      
+     <rect id="r1" x="2px" y="2px" width="50px" height="50px" fill="#9739cb"></rect>
+     <rect id="r2" x="80px" y="2px" width="50px" height="50px" fill="#8E26C7"></rect>
+     <rect id="r3" x="158px" y="2px" width="50px" height="50px" fill="#8512C4"></rect>
 
+    </svg>
+  
+    <button id="more" onClick="dSquareData(squaresEnter)">MORE SQUARES </button>
+    <button id="fewer" onClick="dSquareData(squaresExit)">FEWER SQUARES</button>
+    
+
+<script>
+  function dSquareData(squaresEnter, squaresExit){
+  //var initialSquares = d3.selectAll("rect");
+     var SVG = d3.select("svg");
+     var initialSquares = svg.selectAll("rect")
+     .data([10, 20, 30, 40]);
+      
+     var squaresEnter = initialSquares.enter().append("rect");
+      squaresEnter.attr("y", 50);
+      squaresEnter.attr("x", 200);
+      squaresEnter.attr("width", 50);
+      squaresEnter.attr("height", 50);
+      squaresEnter.style("color", #8512C4);
+
+      var squaresExit = initialSquares.exit().remove();
+
+  }
+  
+  
+  
+  </script>
   </body>
   </html>
