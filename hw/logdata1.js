@@ -12,12 +12,7 @@ d3.csv("data/csvData.csv", function(error, data) {
     console.log("csv:", data);
 });
 
-d3.json("hw\SAforestarea.json", function(error, data) {
-    console.log("error:", error);
-    console.log("json:", data);
-});
-
-var json = "hw\SAforestarea.json";
+var json = "/hw/SAforestarea.json";
 d3.json(json, function(error, data) {
     console.log("SAforestarea.json", data);
 });
