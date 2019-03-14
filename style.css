@@ -1,6 +1,7 @@
 <head>
   <meta charset="utf-8" />
   <title>CSS Style</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> 
 
   <style>
 
@@ -12,10 +13,13 @@
        h1 {
         color: navy;
         margin-left: 40px;
+        font-family: "Pt-Sans";
           }
       p {
         color: navy;
         font-size: 24px;
+        font-family: "Pt-sans";
+    
         }
       image {
       border: blueviolet; 
