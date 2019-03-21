@@ -1,0 +1,62 @@
+[
+    {
+      "Country Name": "Argentina",
+      "Country Code": "ar",
+      "PForested2016": 9.79
+    },
+    {
+      "Country Name": "Bolivia",
+      "Country Code": "bo",
+      "PForested2016": 50.28
+    },
+    {
+      "Country Name": "Brazil",
+      "Country Code": "br",
+      "PForested2016": 58.93
+    },
+    {
+      "Country Name": "Chile",
+      "Country Code": "cl",
+      "PForested2016": 24.26
+    },
+    {
+      "Country Name": "Colombia",
+      "Country Code": "co",
+      "PForested2016": 52.78
+    },
+    {
+      "Country Name": "Ecuador",
+      "Country Code": "ec",
+      "PForested2016": 50.21
+    },
+    {
+      "Country Name": "Guyana",
+      "Country Code": "gy",
+      "PForested2016": 83.9
+    },
+    {
+      "Country Name": "Paraguay",
+      "Country Code": "py",
+      "PForested2016": 37.75
+    },
+    {
+      "Country Name": "Peru",
+      "Country Code": "pe",
+      "PForested2016": 57.66
+    },
+    {
+      "Country Name": "Suriname",
+      "Country Code": "sr",
+      "PForested2016": 98.26
+    },
+    {
+      "Country Name": "Uruguay",
+      "Country Code": "uy",
+      "PForested2016": 10.67
+    },
+    {
+      "Country Name": "Venezuela",
+      "Country Code": "ve",
+      "PForested2016": 52.74
+    }
+   ]

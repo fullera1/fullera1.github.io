@@ -66,7 +66,7 @@ var path = d3.geoPath()
 
 var svg = d3.select("#my-map")
 .attr("width", window.innerWidth + "px");
-.height("height"); // well I got lost
+//.height("height"); // well I got lost
 
 //want to get rid of.... Antarctica.  Going to use "filter" in GeoJSON...
 var countries =svg.selectALL("path")
@@ -86,7 +86,7 @@ countries.enter().append("path")
 //setting up color scale based on extend of export values
 var data = dataArray[0];
 data.forEach(function(d) {
-    d.export = parseFloat(d.export) };
+    d.export = parseFloat(d.export)
     //now we have numbers from which we can create a color scale
 });
 
@@ -108,12 +108,12 @@ var colorScale = d3.scaleLinear()
 countries.enter().append("path")
 .attr("d", function(feature) {
     return path(feature); 
-    {)
-    .attr("fill, function(feature) {
+    
+    .attr("fill", function(feature) {
         var matches = latestData.filter(function(d) {
-            return d.coutnry == feature.id.toLowerCase();
-            
-            )};
+            return d.country == feature.id.toLowerCase();
+        });
+    }
             console.log(feature.id, matches);
 
             return "red";
