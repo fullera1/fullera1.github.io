@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset = "utf-8">
-        <title> 2016 % Land Area in South American Countries</title>
+        <title> 2016 % Land Area Forested in South American Countries</title>
         <script src = "https://d3js.org/d3.v4.min.js"></script>
         <script src="/hw/logdata2.js"></script>
         <script src = "https://unpkg.com/topojson@3"></script>
@@ -40,7 +40,7 @@
                     .range(["rgb(200, 150, 150)","rgb(100, 0, 0)"]);
                 var names = dataArray[1];
                 var countryTopojson = dataArray[2];
-                var geoJson = topojson.feature(countryTopojson, countryTopojson.objects.countries);
+              
          
 
          //geoJson.features = geoJson.features.filter(function(country){
@@ -68,6 +68,8 @@
 
          .attr("data", function(feature) {
              return path(feature);
+
+             var geoJson = topojson.feature(countryTopojson, countryTopojson.objects.countries);
          });
         
 /*.attr("fill", function(feature) {
