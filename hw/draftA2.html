@@ -7,9 +7,7 @@
         <script src="/hw/logdata2.js"></script>
         <script src = "https://unpkg.com/topojson@3"></script>
 
-        d3.json("worldGeo.json", function(error, data) {
-            console.log(data);
-          });
+       
         
     </head>
     <body>
@@ -30,13 +28,13 @@
         .awaitAll(function(error, dataArray) {
         //DEFINING GLOBAL VARIABLES: 
                 var data = dataArray;
-                data.forEach(function(d) {
-                    d.export=parseFloat(d.export);
+                data.forEach(function(data) {
+                    data.export=parseFloat(data.export);
                 });
-                var sixteenP = data.filter(function(d) {
-                    return d.PForested2016 =="PForested2016"; });
-                var domain = d3.extent(sixteenP, function(d) {
-                    return d.export; });
+                var sixteenP = data.filter(function(data) {
+                    return data.PForested2016 =="PForested2016"; });
+                var domain = d3.extent(sixteenP, function(data) {
+                    return data.PForested2016; });
                 var colorScale = d3.scaleLinear()
                     .domain(domain)
                     .range(["rgb(200, 150, 150)","rgb(100, 0, 0)"]);
@@ -47,7 +45,9 @@
 
          //geoJson.features = geoJson.features.filter(function(country){
            //  return country.id != "AQ" && country.id != "-99";
-         });
+
+           
+        
 
          var projection = d3.geoMercator()
          .fitSize ([width, height], geoJson);
@@ -66,20 +66,34 @@
 
          countries.enter().append("path")
 
-         .attr("d", function(feature) {
+         .attr("data", function(feature) {
              return path(feature);
-         })
-        
-         .attr("fill", function(feature){
-             return d.country==feature.id.toLowerCase();
          });
-
-         if (matches.length > 0 ) {
-             return colorScale(matches[0].export)};
         
-             else {return "rgb(200, 200, 200)"};
-            
+/*.attr("fill", function(feature) {
+    var matches = latestData.filter(function(d) {
+        return d.country == feature.id.toLowerCase();
+    });
+    if (matches.length > 0) {
+        return colorScale(matches[0].export);
+    }
+    else {
+        return "rgb(200, 200, 200)";
+    }
+});
+*/
 
+         .attr("fill", function(feature) {
+             var matches = sixteenP.filter(function(data) {
+                 return data.PForested2016 == feature.id.toLowerCase();
+             });
+         if (matches.length > 0 ) {
+             return colorScale(matches[0].export);
+         }
+             else {
+                return "rgb(200, 200, 200)";
+             }   
+        });
 
              
         
