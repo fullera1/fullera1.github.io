@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Map draft</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+  </head>
+  <body>
+    <h1 id="title">% of Land Area Forested in South American Countries</h1>
+    <svg id="my-map"></svg>
+    <script>
+
+        var width = window.innerWidth; //just setting up variables  Width est later
+        var height = 700;
+
+        d3.queue()
+            .defer(d3.csv, "/Data/wBPL.csv") // 0  how, what
+            .defer(d3.csv, "/Data/countryNames.csv")
+            .defer(d3.json, "../topojson/world-alpha2.json")
+            .awaitAll(function(error, dataArray) {
+
+                var data = dataArray[0];
+                data.forEach(function(row) {
+                    row.PForested2016 = parseFloat(row.PForested2016);
+                });
+
+                var domain = d3.extent(data, function(row) {
+                    return row.PForested2016;
+                });
+
+                var colorScale = d3.scaleLinear()
+                    .domain(domain)
+                    .range(["rgb(200, 150, 150)", "rgb(100, 0, 0)"]);
+
+                var names = dataArray[1];
+                var countryTopojson = dataArray[2];
+
+                var geoJSON = topojson.feature(countryTopojson, countryTopojson.objects.countryShapes);
+                console.log(geoJSON);
+                geoJSON.features = geoJSON.features.filter(function(country) {
+                    return country.id == "ar" && country.id == "bo" && country.id == "br" && country.id == "cl" && country.id == "co" && country.id == "ec" && country.id == "gy" && country.id == "py" && country.id == "pe" && country.id == "sr" && country.id == "uy" && country.id == "ve";
+                });
+
+                var projection = d3.geoMercator()
+                    .fitSize([width, height], geoJSON);
+
+                var path = d3.geoPath()
+                    .projection(projection);
+
+                var svg = d3.select("#my-map")
+                    .attr("width", width + "px")
+                    .attr("height", height + "px");
+
+                var countryShapes = svg.selectAll("path")  //original: countries. changed to countryShapes
+                    .data(geoJSON.features);
+
+                countryShapes.enter().append("path")
+                    .attr("row", function(feature) {
+                        return path(feature);
+                    })
+                    .attr("fill", function(feature) {
+                        var matches = data.filter(function(row) {
+                            return row.country == feature.id.toLowerCase();
+                        });
+                        if (matches.length > 0) {
+                            return colorScale(matches[0].PForested2016);
+                        }
+                        else {
+                            return "rgb(200, 200, 200)";
+                        }
+                    });
+            });
+
+    </script>
+  </body>
+</html>

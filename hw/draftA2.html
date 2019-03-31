@@ -21,7 +21,7 @@
         d3.queue()
         .defer(d3.csv, "Data/worldBankPercentLandForest.csv")
         .defer(d3.csv, "Data/countryNames.csv")
-        //.defer(d3.json, "../topojson/world.json")
+        .defer(d3.json, "../topojson/world.json")
         //.defer(d3.json, "____public")
         .defer(d3.json, "/Data/worldGeo.json")
       
