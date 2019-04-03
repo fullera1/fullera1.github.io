@@ -17,7 +17,8 @@
         d3.queue()
             .defer(d3.csv, "/Data/wBPL.csv") // 0  how, what
             .defer(d3.csv, "/Data/countryNames.csv")
-            .defer(d3.json, "../topojson/world-alpha2.json")
+            .defer(d3.json, "..Data/worldGeo.json")
+            //.defer(d3.json, "..hw/world-alpha2.json")
             .awaitAll(function(error, dataArray) {
 
                 var data = dataArray[0];
