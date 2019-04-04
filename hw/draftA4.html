@@ -25,12 +25,12 @@
             .awaitAll(function(error, dataArray) {
 
                 var data = dataArray[0];
-                data.forEach(function(row) {
-                    row.PForested2016 = parseFloat(row.PForested2016);
+                data.forEach(function(d) {
+                    d.PForested2016 = parseFloat(d.PForested2016);
                 });
 
-                var domain = d3.extent(data, function(row) {
-                    return row.PForested2016;
+                var domain = d3.extent(data, function(d) {
+                    return d.PForested2016;
                 });
 
                 var colorScale = d3.scaleLinear()
@@ -60,12 +60,12 @@
                     .data(geoJSON.features);
 
                 countryShapes.enter().append("path")
-                    .attr("row", function(feature) {
+                    .attr("d", function(feature) {
                         return path(feature);
                     })
                     .attr("fill", function(feature) {
-                        var matches = data.filter(function(row) {
-                            return row.country == feature.id.toLowerCase();
+                        var matches = data.filter(function(d) {
+                            return d.country == feature.id.toLowerCase();
                         });
                         if (matches.length > 0) {
                             return colorScale(matches[0].PForested2016);
