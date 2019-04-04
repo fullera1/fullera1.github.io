@@ -17,8 +17,10 @@
         d3.queue()
             .defer(d3.csv, "/Data/wBPL.csv") // 0  how, what
             .defer(d3.csv, "/Data/countryNames.csv")
-            .defer(d3.json, "..Data/worldGeo.json")
-            //.defer(d3.json, "..hw/world-alpha2.json")
+            //.defer(d3.json, "../Data/worldGeo.json")
+            //.defer(d3.json, "/Data/worldGeo.json") // Dave's suggestion in 3Apr troubleshoot see email
+            //.defer(d3.json, "../THISworld-alpha2.json")
+            .defer(d3.json, "/hw/THISworld-alpha2.json")
             .awaitAll(function(error, dataArray) {
 
                 var data = dataArray[0];
@@ -37,7 +39,7 @@
                 var names = dataArray[1];
                 var countryTopojson = dataArray[2];
 
-                var geoJSON = topojson.feature(countryTopojson, countryTopojson.objects.countryShapes);
+                var geoJSON = topojson.feature(countryTopojson, countryTopojson.objects.countryShapes); //topojson -> worldGeo didn't work
                 console.log(geoJSON);
                 geoJSON.features = geoJSON.features.filter(function(country) {
                     return country.id == "ar" && country.id == "bo" && country.id == "br" && country.id == "cl" && country.id == "co" && country.id == "ec" && country.id == "gy" && country.id == "py" && country.id == "pe" && country.id == "sr" && country.id == "uy" && country.id == "ve";
