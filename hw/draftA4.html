@@ -40,7 +40,7 @@
                 var names = dataArray[1];
                 var countryTopojson = dataArray[2];
 
-                var geoJSON = topojson.feature(countryTopojson, countryTopojson.objects.countryShapes); //topojson -> worldGeo didn't work
+                var geoJSON = topojson.feature(countryTopojson, countryTopojson.objects.countries); //topojson -> worldGeo didn't work
                 console.log(geoJSON);
                 geoJSON.features = geoJSON.features.filter(function(country) {
                     return country.id == "ar" && country.id == "bo" && country.id == "br" && country.id == "cl" && country.id == "co" && country.id == "ec" && country.id == "gy" && country.id == "py" && country.id == "pe" && country.id == "sr" && country.id == "uy" && country.id == "ve";
