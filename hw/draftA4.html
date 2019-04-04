@@ -43,7 +43,7 @@
                 var geoJSON = topojson.feature(countryTopojson, countryTopojson.objects.countries); //topojson -> worldGeo didn't work
                 console.log(geoJSON);
                 geoJSON.features = geoJSON.features.filter(function(country) {
-                    return country.id == "AR" && country.id == "BO" && country.id == "BR" && country.id == "CL" && country.id == "CO" && country.id == "EC" && country.id == "GY" && country.id == "PY" && country.id == "PE" && country.id == "SR" && country.id == "UY" && country.id == "VE";
+                    return country.id == "AR" || country.id == "BO" || country.id == "BR" || country.id == "CL" || country.id == "CO" || country.id == "EC" || country.id == "GY" || country.id == "PY" || country.id == "PE" || country.id == "SR" || country.id == "UY" || country.id == "VE";
                 });
 
                 var projection = d3.geoMercator()
