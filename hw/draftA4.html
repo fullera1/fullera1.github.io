@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <style> 
-        <div.tooltip {
+        div.tooltip {
          position: absolute;
          text-align: center;
          width: 60px;
@@ -93,15 +93,15 @@
                         else {
                             return "rgb(200, 200, 200)";
                         }
-                    });
+                    })
 
-                    .on("mouseover", function(d) {//why squiggly line under "."?
+                    .on("mouseover", function(d) {
                         div.transition()
                             .duration(200)
                             .style("opacity", .9);
-                        //div .html (WHAT_HERE(d.PForested2016) + "<br/>" +d.close)
+                        div .html (WHAT_HERE(d.PForested2016) + "<br/>" +d.close)
                             .style("left", (d3.event.pageX)  + "px")
-                            .style("top", (d3.event.pageY - 28) + "px");
+                            .style("top", (d3.event.pageY - 28) + "px")
                     })
 
                     .on("mouseout", function(d) {
