@@ -15,6 +15,22 @@
          border-radius: 8px;
          pointer-events: none;
     }
+
+    .tooltip {
+        text-decoration:none;
+        position:relative;
+    }
+     .tooltip span {
+        display:none;
+    }
+     .tooltip span svg {
+        float:left;
+    }
+     .tooltip:hover span {
+        display:block;
+        position:absolute;
+        overflow:hidden;
+    }
     </style>
     <title>Map draft</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -25,7 +41,7 @@
     <svg id="my-map"></svg>
     <script>
 
-        var width = window.innerWidth; //just setting up variables  Width est later
+        var width = window.innerWidth; //just setting up variables   Width est later
         var height = 700;
 
         
@@ -44,6 +60,11 @@
                 data.forEach(function(d) {
                     d.PForested2016 = parseFloat(d.PForested2016);
                 });
+
+                // Parse the date / time
+                    //var parseDate = d3.time.format("%d-%b-%y").parse;
+                    //var formatTime = d3.time.format("%e %B");
+               //var formatData = d3.WHAT.WHAT("item from PForested2016" + "%")
 
                 var domain = d3.extent(data, function(d) {
                     return d.PForested2016;
@@ -99,7 +120,7 @@
                         div.transition()
                             .duration(200)
                             .style("opacity", .9);
-                        div .html (WHAT_HERE(d.PForested2016) + "<br/>" +d.close)
+                        div .html (Map.prototype.forEach(d.PForested2016) + "<br/>" +d.close)//What in place of Map.prototype.forEach?
                             .style("left", (d3.event.pageX)  + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
                     })
