@@ -120,7 +120,12 @@
                         div.transition()
                             .duration(200)
                             .style("opacity", .9);
-                        div .html (WHAT(d.PForested2016) + "<br/>" +d.close)//What in place of Map.prototype.forEach?
+                            var dataRow = data.filter(function(row) {
+                            return row.code == d.id.toLowerCase();
+                                                                    })[0];
+
+                        //div .html (WHAT(d.PForested2016) + "<br/>" +d.close)//What in place of Map.prototype.forEach?
+                            div .html(dataRow.PForested2016)
                             .style("left", (d3.event.pageX)  + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
                     })
