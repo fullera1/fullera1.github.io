@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <style> 
+    body {
+        text-align: center;
+    }
+    #my-map {
+        margin-right: 100px;
+    }
+    path:hover {
+        
+    }
         div.tooltip {
          position: absolute;
          text-align: center;
@@ -41,7 +50,7 @@
     <svg id="my-map"></svg>
     <script>
 
-        var width = window.innerWidth; //just setting up variables   Width est later
+        var width = window.innerWidth - 200; //just setting up variables   Width est later
         var height = 700;
 
         
@@ -116,18 +125,20 @@
                         }
                     })
 
-                    .on("mouseover", function(d) {
+                    .on("mousemove", function(d) {
                         div.transition()
                             .duration(200)
                             .style("opacity", .9);
                             var dataRow = data.filter(function(row) {
                             return row.code == d.id.toLowerCase();
-                                                                    })[0];
+                            })[0];
 
                         //div .html (WHAT(d.PForested2016) + "<br/>" +d.close)//What in place of Map.prototype.forEach?
-                            div .html(dataRow.PForested2016)
+                            div .html(dataRow.name + "<br />" + dataRow.PForested2016)
+                            //.html(dataRow.name)
                             .style("left", (d3.event.pageX)  + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
+
                     })
 
                     .on("mouseout", function(d) {
