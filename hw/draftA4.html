@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> 
     <style> 
     body {
         text-align: center;
+        font-family: "Pt-Sans";
         background-image: url("/hw/treesbkgrnd.jpg");
         background-color: lightsteelblue;
             }
@@ -48,8 +50,12 @@
     <script src="https://unpkg.com/topojson@3"></script>
   </head>
   <body>
-    <h1 id="title">Forested Land Area (%)</br> in South American Countries, 2016</h1>
-    <p> This map represents the amount of land in South American countries that was forested in 2016 according to WorldBank.org.  </br>Further analysis can help explain how deforestation has affected South American ecosystems and economies over time</br> and how their gains and losses relate to the economies of other nations.  In doing this, it is important to note that forested</br> areas can decrease not only because of human deforestation, but also because of natural occurrences, such as wildfires. </br>Data source: WorldBank.org</br> Made by Annalee Fuller</p>
+    <h1 id="title">Forested Land Area</br> in South American Countries, 2016</h1>
+    <p> This map represents the amount of land in South American countries that was forested in 2016 according to WorldBank.org.  </br> Forested land is defined as "land under natural or planted stands of trees of at least 5 meters in situ, whether</br> productive or not, and excludes tree stands in agricultural production systems (for example, in fruit plantations and agroforestry</br> systems) and trees in urban parks and gardens" (WorldBank.org). Further analysis can help explain how deforestation</br> has affected South American ecosystems and economies over time and how their gains and losses relate to the</br> economies of other nations.  In doing this, it is important to note that forested areas can decrease not only because</br> of human deforestation, but also because of natural occurrences, such as wildfires.</p></br>
+        Data Source:
+         <a href="https://data.worldbank.org/indicator/ag.lnd.frst.zs"> WorldBank.org </a>
+        </br> 
+        <p>Made by Annalee Fuller</p>
     <svg id="my-map"></svg>
     <script>
 
@@ -137,7 +143,7 @@
                             })[0];
 
                         //div .html (WHAT(d.PForested2016) + "<br/>" +d.close)//What in place of Map.prototype.forEach?
-                            div .html(dataRow.name + "<br />" + dataRow.PForested2016)
+                            div .html(dataRow.name + "<br />" + dataRow.PForested2016 + "%")
                             //.html(dataRow.name)
                             .style("left", (d3.event.pageX)  + "px")
                             .style("top", (d3.event.pageY - 28) + "px")
