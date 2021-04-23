@@ -15,8 +15,6 @@ var width = 500;
 
 var margin = {left:50,right:50,top:40,bottom:0}; //introduced margin
 
-
-
 //before the area generator, introduce linear scale as variable with this structure: __var y = d3.scaleLinear().domain().range();__
 var y = d3.scaleLinear()
             .domain([0,180])//take an array: min, max
